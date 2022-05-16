@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.14">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<SaveDataInSettings>UseList</SaveDataInSettings>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
 			<Button name="ФормаКонвертировать" id="13">
@@ -49,35 +51,84 @@
 				</ProgressBarField>
 			</ChildItems>
 		</UsualGroup>
-		<UsualGroup name="ГруппаРезультат" id="7">
-			<Group>Vertical</Group>
-			<Behavior>Usual</Behavior>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаРезультатРасширеннаяПодсказка" id="8"/>
+		<Pages name="ГруппаСтраницы" id="26">
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="27"/>
 			<ChildItems>
-				<CommandBar name="Группа2" id="9">
-					<CommandSource>Item.ДокументРезультат</CommandSource>
-					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="10"/>
+				<Page name="СтраницаПараметры" id="28">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Параметры</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПараметрыРасширеннаяПодсказка" id="29"/>
 					<ChildItems>
-						<Button name="ДокументРезультатСохранить" id="11">
-							<Type>CommandBarButton</Type>
-							<Representation>PictureAndText</Representation>
-							<CommandName>Form.Item.ДокументРезультат.StandardCommand.Save</CommandName>
-							<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
-							<ExtendedTooltip name="ДокументРезультатСохранитьРасширеннаяПодсказка" id="12"/>
-						</Button>
+						<InputField name="рСантиметр" id="30">
+							<DataPath>рСантиметр</DataPath>
+							<ContextMenu name="рСантиметрКонтекстноеМеню" id="31"/>
+							<ExtendedTooltip name="рСантиметрРасширеннаяПодсказка" id="32"/>
+						</InputField>
+						<InputField name="рШиринаСтраницы" id="33">
+							<DataPath>рШиринаСтраницы</DataPath>
+							<ContextMenu name="рШиринаСтраницыКонтекстноеМеню" id="34"/>
+							<ExtendedTooltip name="рШиринаСтраницыРасширеннаяПодсказка" id="35"/>
+						</InputField>
+						<InputField name="ФильтрТаблиц" id="23">
+							<DataPath>ФильтрТаблиц</DataPath>
+							<MultiLine>true</MultiLine>
+							<ExtendedEdit>true</ExtendedEdit>
+							<ContextMenu name="ФильтрТаблицКонтекстноеМеню" id="24"/>
+							<ExtendedTooltip name="ФильтрТаблицРасширеннаяПодсказка" id="25"/>
+						</InputField>
 					</ChildItems>
-				</CommandBar>
-				<SpreadSheetDocumentField name="ДокументРезультат" id="4">
-					<DataPath>ДокументРезультат</DataPath>
-					<ShowGrid>true</ShowGrid>
-					<ShowHeaders>true</ShowHeaders>
-					<ContextMenu name="ДокументРезультатКонтекстноеМеню" id="5"/>
-					<ExtendedTooltip name="ДокументРезультатРасширеннаяПодсказка" id="6"/>
-				</SpreadSheetDocumentField>
+				</Page>
+				<Page name="СтраницаРезультат" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результат</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результат</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаРезультатРасширеннаяПодсказка" id="8"/>
+					<ChildItems>
+						<CommandBar name="Группа2" id="9">
+							<CommandSource>Item.ДокументРезультат</CommandSource>
+							<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="10"/>
+							<ChildItems>
+								<Button name="ДокументРезультатСохранить" id="11">
+									<Type>CommandBarButton</Type>
+									<Representation>PictureAndText</Representation>
+									<CommandName>Form.Item.ДокументРезультат.StandardCommand.Save</CommandName>
+									<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+									<ExtendedTooltip name="ДокументРезультатСохранитьРасширеннаяПодсказка" id="12"/>
+								</Button>
+							</ChildItems>
+						</CommandBar>
+						<SpreadSheetDocumentField name="ДокументРезультат" id="4">
+							<DataPath>ДокументРезультат</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ShowGrid>true</ShowGrid>
+							<ShowHeaders>true</ShowHeaders>
+							<ContextMenu name="ДокументРезультатКонтекстноеМеню" id="5"/>
+							<ExtendedTooltip name="ДокументРезультатРасширеннаяПодсказка" id="6"/>
+						</SpreadSheetDocumentField>
+					</ChildItems>
+				</Page>
 			</ChildItems>
-		</UsualGroup>
+		</Pages>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -127,6 +178,62 @@
 					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
 				</v8:NumberQualifiers>
 			</Type>
+		</Attribute>
+		<Attribute name="ФильтрТаблиц" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Фильтр таблиц</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ФильтрТаблиц</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="рСантиметр" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пунктов в сантиметре</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>2</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>рСантиметр</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="рШиринаСтраницы" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ширина страницы (в пунктах)</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+			<Save>
+				<Field>рШиринаСтраницы</Field>
+			</Save>
 		</Attribute>
 	</Attributes>
 	<Commands>
